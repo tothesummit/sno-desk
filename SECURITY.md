@@ -27,4 +27,4 @@ These must hold in every release. A change that breaks one is a security bug, re
 
 ## Reporting a vulnerability
 
-The repository is private during the design phase. Once public, report vulnerabilities through GitHub's private vulnerability reporting on this repository — never in a public issue.
+Report vulnerabilities through GitHub's private vulnerability reporting on this repository (Security tab → Report a vulnerability), never in a public issue.

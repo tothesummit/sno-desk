@@ -13,7 +13,7 @@ and routes it to your own brokerage — only after you approve it.
 [![status](https://img.shields.io/badge/status-design_phase-0071e3?style=flat-square)](#roadmap)
 [![runs on](https://img.shields.io/badge/runs_on-your_machine-1d1d1f?style=flat-square)](#faq)
 [![first adapter](https://img.shields.io/badge/first_adapter-Schwab-1d1d1f?style=flat-square)](#brokers)
-[![license](https://img.shields.io/badge/license-to_be_chosen-86868b?style=flat-square)](#license)
+[![license](https://img.shields.io/badge/license-AGPL--3.0-86868b?style=flat-square)](LICENSE)
 
 [How it works](#how-it-works) · [Security](SECURITY.md) · [Architecture](docs/architecture.md) · [Brokers](#brokers) · [Roadmap](#roadmap) · [FAQ](#faq)
 
@@ -133,6 +133,7 @@ Triggers evaluate while your machine is awake — a real cost of self-hosting. W
 
 ```
 .
+├── LICENSE                AGPL-3.0
 ├── README.md
 ├── SECURITY.md            threat model · release invariants
 └── docs/
@@ -202,12 +203,12 @@ Because the security model is the product. A threat model published after an imp
 <details>
 <summary><strong>How can I help?</strong></summary><br>
 
-Attack the threat model. Once this repo is public, the most valuable contribution is an issue explaining how the two-channel rule or the risk gate could be bypassed.
+Attack the threat model. The most valuable contribution is an issue explaining how the two-channel rule or the risk gate could be bypassed.
 </details>
 
 ## License
 
-Not yet chosen. Until a license file is added, all rights are reserved. A license will be selected before this repository is made public.
+[GNU AGPL-3.0](LICENSE). Use it, change it and self-host it freely. If you distribute it, or run a modified version as a network service, you have to publish your source under the same license.
 
 ---
 

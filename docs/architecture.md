@@ -157,4 +157,3 @@ Approval records and user text are required fields. An order without both is a b
 - **Triggers on a machine that sleeps.** Self-hosted means standing instructions only evaluate while the machine is awake. Options: place simple triggers as native conditional orders where the broker supports them, run on a small always-on device, or accept and surface the gap on every agent.
 - **Model default.** Bring-your-own API key, a local model, or both — and what the minimum capable model is for reliable compilation.
 - **Options scope for v0.2.** Single-leg only, or defined-risk spreads from the start.
-- **License.** To be chosen before the repository is made public.
