@@ -100,7 +100,7 @@ accounts:
     execution: false            # read-only: tickets render, nothing routes
 global:
   require_approval: always
-  halt: false                   # `desk halt` flips this
+  halt: false                   # `countersign halt` flips this
 ```
 
 The gate is a pure function. Given the same intent, rules and positions it returns the same result, with a reason for every failure. No model is involved.

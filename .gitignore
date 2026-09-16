@@ -1,4 +1,4 @@
-# Snø Desk keeps broker credentials in the OS keychain.
+# Countersign keeps broker credentials in the OS keychain.
 # These patterns are a backstop, not the mechanism.
 .DS_Store
 .env

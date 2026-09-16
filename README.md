@@ -2,7 +2,7 @@
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/assets/lockup-dark.svg">
-  <img src="docs/assets/lockup-light.svg" alt="Snø Desk" height="46">
+  <img src="docs/assets/lockup-light.svg" alt="Countersign" height="52">
 </picture>
 
 ### Trade in plain English, on the broker you already have.
@@ -37,11 +37,11 @@ and routes it to your own brokerage — only after you approve it.
 
 **Most self-directed money isn't moving.** It sits at brokers people have used for decades, in accounts they won't transfer for a feature.
 
-Snø Desk is the narrow tool for that gap: one job — turning instructions into orders at *your* broker — designed on the assumption that it will be attacked.
+Countersign is the narrow tool for that gap: one job — turning instructions into orders at *your* broker — designed on the assumption that it will be attacked.
 
 ## What it does
 
-You write what you want. Snø Desk turns it into a ticket with every field explicit, and waits.
+You write what you want. Countersign turns it into a ticket with every field explicit, and waits.
 
 | You type | It becomes |
 |---|---|
@@ -84,7 +84,7 @@ Detail: [`docs/architecture.md`](docs/architecture.md)
 | **Two channels.** | Text the agent *reads* — news, filings, email, web pages — can never create an order. Only you can. This is the prompt-injection defense, enforced in types rather than requested in a prompt. |
 | **Keys stay in the OS keychain.** | Never in a config file, log, backup or the journal. |
 | **Read-only until you say otherwise.** | Execution is a per-account switch, off by default. |
-| **Nothing arms itself.** | New and imported agents start paused. `desk halt` stops everything. |
+| **Nothing arms itself.** | New and imported agents start paused. `countersign halt` stops everything. |
 
 Eight threats, their failure modes, and five release invariants: [`SECURITY.md`](SECURITY.md)
 
@@ -100,7 +100,7 @@ Eight threats, their failure modes, and five release invariants: [`SECURITY.md`]
 | Fidelity | Not possible | No retail trading API |
 | Vanguard | Not possible | No retail trading API |
 
-Adapters talk to each broker's own API. Snø Desk will not route your credentials through a third-party aggregator to widen coverage — that puts someone else between you and your account, which is the thing this project exists to avoid.
+Adapters talk to each broker's own API. Countersign will not route your credentials through a third-party aggregator to widen coverage — that puts someone else between you and your account, which is the thing this project exists to avoid.
 
 ## Agents
 
@@ -113,7 +113,7 @@ Standing instructions compile to the same typed ticket and pass the same risk ga
 | `armed` | Produces tickets through the full pipeline, inside its caps. |
 
 ```console
-$ desk agent new "if SPY closes below its 200-day, put 20% of the trading account into SGOV"
+$ countersign agent new "if SPY closes below its 200-day, put 20% of the trading account into SGOV"
 
   compiled   a2 · buy · SGOV · notional
   sizing     20% of Trading ····7730, recomputed at trigger
@@ -121,8 +121,8 @@ $ desk agent new "if SPY closes below its 200-day, put 20% of the trading accoun
   resolved   "200-day" → simple moving average, 200 sessions
   state      PAUSED
 
-  desk agent preview a2   see what it would have done
-  desk agent arm a2       start acting, inside your caps
+  countersign agent preview a2   see what it would have done
+  countersign agent arm a2       start acting, inside your caps
 ```
 
 <sub>Planned CLI. Illustrative only.</sub>
@@ -153,9 +153,9 @@ Triggers evaluate while your machine is awake — a real cost of self-hosting. W
 ## FAQ
 
 <details>
-<summary><strong>Is Snø Desk a broker?</strong></summary><br>
+<summary><strong>Is Countersign a broker?</strong></summary><br>
 
-No. Your money stays at your own brokerage. Snø Desk is software on your machine that sends instructions to that broker's API, the way a desktop trading platform does. It holds no funds and takes no custody.
+No. Your money stays at your own brokerage. Countersign is software on your machine that sends instructions to that broker's API, the way a desktop trading platform does. It holds no funds and takes no custody.
 </details>
 
 <details>
@@ -212,4 +212,4 @@ Attack the threat model. The most valuable contribution is an issue explaining h
 
 ---
 
-<sub>Snø Desk is software you run yourself. It is not a broker-dealer or investment adviser, holds no funds or credentials on anyone's behalf, and provides no investment advice or recommendations. Trading involves risk of loss, and you are responsible for every order you approve. Broker names identify compatibility only and imply no endorsement.</sub>
+<sub>Countersign is software you run yourself. It is not a broker-dealer or investment adviser, holds no funds or credentials on anyone's behalf, and provides no investment advice or recommendations. Trading involves risk of loss, and you are responsible for every order you approve. Broker names identify compatibility only and imply no endorsement.</sub>

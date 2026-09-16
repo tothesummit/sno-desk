@@ -1,6 +1,6 @@
 # Security
 
-Snø Desk is designed to place trades in real brokerage accounts. Everything below is a design commitment, not a description of shipped code — **there is no code yet.** The threat model is published first so it can be challenged before an implementation exists.
+Countersign is designed to place trades in real brokerage accounts. Everything below is a design commitment, not a description of shipped code — **there is no code yet.** The threat model is published first so it can be challenged before an implementation exists.
 
 ## Threat model
 
@@ -12,7 +12,7 @@ Snø Desk is designed to place trades in real brokerage accounts. Everything bel
 | **Malicious shared agent** | Someone shares an agent that trades against the person who imports it. | Imported agents arrive `paused` and preview-only and cannot arm themselves. There is no marketplace that can execute. |
 | **Expired or stale auth** | An expired token silently serves cached positions as current. | Hard stop with a specific, loud error. Never a cached fallback presented as live data. |
 | **Tampered release** | A modified binary or install script steals credentials. | Signed releases, published checksums, reproducible builds. No `curl \| sh` installation. |
-| **Runaway agent** | An armed agent fires repeatedly on a flapping condition. | Per-agent fire limits and cool-downs, plus a global kill switch: `desk halt`. |
+| **Runaway agent** | An armed agent fires repeatedly on a flapping condition. | Per-agent fire limits and cool-downs, plus a global kill switch: `countersign halt`. |
 | **Local compromise** | Malware is already running on the user's machine. | Out of scope to fully defend. Execution can be disabled per account, and broker-side revocation steps are documented for every adapter. |
 
 ## Invariants
